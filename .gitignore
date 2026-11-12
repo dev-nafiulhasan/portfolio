@@ -1,0 +1,10 @@
+node_modules
+.next
+.env
+.env.local
+.vercel
+next-env.d.ts
+*.tsbuildinfo
+# content saved by the admin panel when running locally
+/data/content.json
+/public/uploads

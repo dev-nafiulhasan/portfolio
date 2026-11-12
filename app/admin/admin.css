@@ -1,0 +1,432 @@
+.adm {
+  --line: #dfe1dc;
+  --soft: #f4f5f2;
+  --text: #171915;
+  --dim: #646a5f;
+  --main: #171915;
+  --red: #b3261e;
+  min-height: 100vh;
+  background: var(--soft);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.adm :focus-visible {
+  outline: 2px solid #2f6feb;
+  outline-offset: 2px;
+}
+
+.adm ::selection {
+  background: #cfe0ff;
+  color: inherit;
+}
+
+.adm button,
+.adm input,
+.adm textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.adm button {
+  cursor: pointer;
+}
+
+.adm button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.adm__center {
+  padding: 30vh 16px;
+  text-align: center;
+  color: var(--dim);
+}
+
+/* buttons */
+.adm .b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.adm .b:hover:not(:disabled) {
+  border-color: #b9bdb3;
+}
+
+.adm .b--main {
+  background: var(--main);
+  border-color: var(--main);
+  color: #fff;
+}
+
+.adm .b--quiet {
+  background: transparent;
+  border-color: transparent;
+  color: var(--dim);
+}
+
+.adm .b--add {
+  width: 100%;
+  min-height: 46px;
+  border-style: dashed;
+  background: transparent;
+  color: var(--dim);
+}
+
+/* login */
+.adm .login {
+  display: grid;
+  gap: 16px;
+  width: min(360px, calc(100vw - 32px));
+  margin: 0 auto;
+  padding-top: 22vh;
+}
+
+.adm .login h1 {
+  font-size: 22px;
+}
+
+/* top bar */
+.adm .bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 8px 20px;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.adm .bar nav {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  flex: 1;
+  min-width: 0;
+}
+
+.adm .bar nav button {
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: var(--dim);
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.adm .bar nav button.on {
+  background: var(--soft);
+  color: var(--text);
+}
+
+.adm .bar__right {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+
+@media (max-width: 720px) {
+  .adm .bar nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+}
+
+/* panel */
+.adm .panel {
+  display: grid;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 32px 16px 120px;
+}
+
+.adm .panel h1 {
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.adm .panel h2 {
+  font-size: 16px;
+  margin-top: 24px;
+}
+
+.adm .help {
+  color: var(--dim);
+  margin-top: -8px;
+}
+
+/* fields */
+.adm .f {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.adm .f > span:first-child {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.adm .f small {
+  color: var(--dim);
+  font-size: 12.5px;
+  overflow-wrap: anywhere;
+}
+
+.adm input[type='text'],
+.adm input[type='password'],
+.adm textarea {
+  width: 100%;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.adm textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.adm .grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 600px) {
+  .adm .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.adm .check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  align-self: center;
+}
+
+.adm .check input {
+  width: 18px;
+  height: 18px;
+}
+
+.adm .color {
+  display: flex;
+  gap: 8px;
+  max-width: 220px;
+}
+
+.adm .color input[type='color'] {
+  width: 44px;
+  height: 40px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* images */
+.adm .img {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.adm .img__thumb {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--soft);
+  color: var(--dim);
+  font-size: 12px;
+}
+
+.adm .img__thumb img,
+.adm .gal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.adm .img__btns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.adm .gal {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.adm .gal figure {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.adm .gal figcaption {
+  position: absolute;
+  inset: auto 4px 4px 4px;
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.adm .gal figcaption button {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: rgb(0 0 0 / 0.72);
+  color: #fff;
+  font-size: 13px;
+}
+
+.adm .gal__add {
+  aspect-ratio: 4 / 3;
+  border: 1px dashed #b9bdb3;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--dim);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* cards */
+.adm .list {
+  display: grid;
+  gap: 10px;
+}
+
+.adm .card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.adm .card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px 10px 16px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.adm .card summary::-webkit-details-marker {
+  display: none;
+}
+
+.adm .card summary b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.adm .card summary b::before {
+  content: '▸';
+  display: inline-block;
+  width: 1.2em;
+  color: var(--dim);
+}
+
+.adm .card[open] summary b::before {
+  content: '▾';
+}
+
+.adm .card__tools {
+  display: flex;
+  gap: 4px;
+  flex: none;
+}
+
+.adm .card__tools button {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  font-size: 13px;
+}
+
+.adm .card__tools .danger {
+  color: var(--red);
+}
+
+.adm .card__body {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border-top: 1px solid var(--line);
+}
+
+/* notes */
+.adm .note {
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.adm .note--ok {
+  background: #e3f4e4;
+  color: #14521c;
+}
+
+.adm .note--err {
+  background: #fde7e5;
+  color: #8a1c15;
+}
+
+.adm .note--float {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  z-index: 20;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  margin: 0;
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.14);
+}
+
+.adm .note--float button {
+  border: 0;
+  background: none;
+}

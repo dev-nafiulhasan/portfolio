@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+<rect width="800" height="1000" fill="#d9d4c7"/><circle cx="400" cy="390" r="150" fill="#0d0e0c" opacity=".22"/>
+<path d="M120 1000c0-190 125-330 280-330s280 140 280 330z" fill="#0d0e0c" opacity=".22"/>
+<text x="400" y="930" text-anchor="middle" font-family="sans-serif" font-size="30" fill="#0d0e0c" opacity=".55">Upload your photo in /admin</text></svg>
