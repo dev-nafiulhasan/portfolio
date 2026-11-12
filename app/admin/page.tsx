@@ -228,7 +228,7 @@ function List<T>(props: {
 
 /* -------------------------------------------------------------------- page */
 
-const TABS = ['Projects', 'General', 'Reviews', 'About', 'Approach', 'Services', 'Contact'] as const;
+const TABS = ['Projects', 'General', 'Skills', 'Reviews', 'About', 'Approach', 'Services', 'Contact'] as const;
 type Tab = (typeof TABS)[number];
 
 const newProject = (): Project => ({
@@ -459,6 +459,7 @@ export default function Admin() {
             </div>
             <Field label="Headline" area rows={2} value={s.role} onChange={(role) => setS({ role })} />
             <Field label="Supporting line" area rows={2} value={s.note} onChange={(note) => setS({ note })} />
+            <Field label="Status badge" value={s.status} onChange={(status) => setS({ status })} hint="Small label at the top of the home page. Leave empty to hide it." />
             <div className="grid2">
               <Field label="Main button text" value={s.ctaLabel} onChange={(ctaLabel) => setS({ ctaLabel })} />
               <Field label="Main button link" value={s.ctaUrl} onChange={(ctaUrl) => setS({ ctaUrl })} hint="Your Upwork or Fiverr profile, for example" />
@@ -498,6 +499,29 @@ export default function Admin() {
             <h2>Search engines and sharing</h2>
             <Field label="Page title" value={s.seoTitle} onChange={(seoTitle) => setS({ seoTitle })} />
             <Field label="Description" area rows={2} value={s.seoDescription} onChange={(seoDescription) => setS({ seoDescription })} />
+          </>
+        )}
+
+        {tab === 'Skills' && (
+          <>
+            <h1>Skills</h1>
+            <p className="help">Shown in the moving strip under the hero and in the Skills section. Remove every skill to hide both.</p>
+            <Field label="Intro line" value={c.skillsIntro} onChange={(skillsIntro) => set({ skillsIntro })} />
+            <List
+              items={c.skills}
+              onChange={(skills) => set({ skills })}
+              make={() => ({ name: '', note: '' })}
+              addLabel="Add skill"
+              title={(k) => k.name || 'New skill'}
+              startOpen
+            >
+              {(k, up) => (
+                <div className="grid2">
+                  <Field label="Skill" value={k.name} onChange={(name) => up({ name })} />
+                  <Field label="One-line description" value={k.note} onChange={(note) => up({ note })} />
+                </div>
+              )}
+            </List>
           </>
         )}
 

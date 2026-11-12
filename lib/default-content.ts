@@ -6,8 +6,9 @@ export const defaultContent: SiteContent = {
   settings: {
     firstName: 'Nafiul',
     lastName: 'Hasan',
-    role: 'Web designer and developer building sites that sell.',
-    note: 'WordPress, Elementor and Shopify specialist. Founder of WebDeskBD.',
+    role: 'Full-stack developer building fast websites, web apps and AI automations.',
+    note: 'Next.js, React, PHP and JavaScript. Founder of WebDeskBD.',
+    status: 'Available for new projects',
     accent: '#c9f24d',
     email: 'hello@webdeskbd.com',
     location: 'Bangladesh',
@@ -18,9 +19,9 @@ export const defaultContent: SiteContent = {
       { label: 'Fiverr', url: 'https://www.fiverr.com/' },
       { label: 'WebDeskBD', url: 'https://webdeskbd.com' },
     ],
-    seoTitle: 'Nafiul Hasan | Web Designer & Developer',
+    seoTitle: 'Nafiul Hasan | Full-Stack Developer',
     seoDescription:
-      'Portfolio of Nafiul Hasan: WordPress, Elementor and Shopify websites designed and built with care.',
+      'Portfolio of Nafiul Hasan: websites, web apps and AI automations built with Next.js, React, PHP and JavaScript.',
     showPreloader: true,
   },
   projects: [
@@ -85,6 +86,14 @@ export const defaultContent: SiteContent = {
       published: true,
     },
   ],
+  skillsIntro: 'The tools I reach for to ship fast, reliable work.',
+  skills: [
+    { name: 'Next.js', note: 'Fast, search-friendly sites and apps with server rendering.' },
+    { name: 'React.js', note: 'Component-driven interfaces that stay easy to extend.' },
+    { name: 'JavaScript', note: 'Interaction, animation and custom logic in the browser.' },
+    { name: 'PHP', note: 'Custom WordPress themes, plugins and back ends.' },
+    { name: 'AI Automation', note: 'Workflows and assistants that take manual work off your plate.' },
+  ],
   reviewsIntro: 'What it’s like to work with me, in my clients’ words.',
   reviews: [
     {
@@ -101,27 +110,27 @@ export const defaultContent: SiteContent = {
     },
   ],
   about: {
-    body: 'I design and build websites for businesses that want to look like themselves, not like a template.\n\nMost of my work is in WordPress with Elementor, and in Shopify. When a builder can’t do what the design asks for, I write the CSS and JavaScript myself, so the result still stays easy for you to edit.',
+    body: 'I build websites and web apps for businesses that want to look like themselves, not like a template.\n\nI work across the stack: Next.js and React on the front, PHP on the back, and AI automation where it saves real time. Whatever I build, you can keep running it without me.',
     portrait: '/seed/portrait.svg',
     facts: [
       { label: 'Based in', value: 'Bangladesh' },
-      { label: 'Platforms', value: 'WordPress, Elementor, Shopify' },
-      { label: 'Also', value: 'HTML, CSS, JavaScript' },
+      { label: 'Stack', value: 'Next.js, React, PHP, JavaScript' },
+      { label: 'Also', value: 'AI automation, WordPress, Shopify' },
       { label: 'Find me on', value: 'Upwork and Fiverr' },
     ],
   },
   approachIntro: 'Four things you can count on, whatever the size of the project.',
   approach: [
-    { title: 'Design that fits you', text: 'Your site should look like your business, not like the theme everyone else bought.' },
+    { title: 'Built to fit you', text: 'Your site should look and work like your business, not like the theme everyone else bought.' },
     { title: 'One person, start to finish', text: 'I design it and I build it, so nothing gets lost in between and you always know who to ask.' },
     { title: 'Yours to edit', text: 'You get a site you can update yourself, without calling a developer for every change.' },
     { title: 'Clear, fast replies', text: 'You’ll know where the project stands at every step.' },
   ],
   servicesIntro: 'Know what you’ll get and what it costs, before we start.',
   services: [
-    { name: 'Your design, built in Elementor', line: 'Pixel-perfect, responsive and easy to edit.', price: 'Set your price', duration: '3 days' },
+    { name: 'A custom Next.js website', line: 'Designed, built and deployed, with content you can edit yourself.', price: 'Set your price', duration: '7 days' },
     { name: 'A landing page, designed and built', line: 'Designed for your brand and built to convert.', price: 'Set your price', duration: '5 days' },
-    { name: 'A Shopify store, set up and styled', line: 'Theme customisation, products and checkout ready to sell.', price: 'Set your price', duration: '7 days' },
+    { name: 'An AI automation for your business', line: 'A workflow that handles the repetitive work for you.', price: 'Set your price', duration: '5 days' },
   ],
   contact: {
     heading: 'Let’s talk',

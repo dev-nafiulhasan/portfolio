@@ -1,3 +1,7 @@
+body:has(.adm)::after {
+  display: none;
+}
+
 .adm {
   --line: #dfe1dc;
   --soft: #f4f5f2;

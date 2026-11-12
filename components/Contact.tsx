@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import type { SiteContent } from '@/lib/types';
 import { Arrow } from './Arrow';
 
@@ -8,12 +7,14 @@ export default function Contact({ content }: { content: SiteContent }) {
   return (
     <div className="accent-zone">
       <section className="cta" id="contact">
-        <h2 className="display rise">{c.heading}</h2>
-        <div className="cta__body rise">
+        <h2 className="display" data-split>
+          {c.heading}
+        </h2>
+        <div className="cta__body rv">
           <p className="lede">{c.text}</p>
           <div className="cta__actions">
             {s.ctaUrl && (
-              <a className="pill pill--ink" href={s.ctaUrl} target="_blank" rel="noopener">
+              <a className="pill pill--ink" href={s.ctaUrl} target="_blank" rel="noopener" data-magnetic>
                 {s.ctaLabel} <Arrow />
               </a>
             )}
@@ -40,7 +41,7 @@ export default function Contact({ content }: { content: SiteContent }) {
             </li>
           ))}
         </ul>
-        <Link href="#top">Back to top ↑</Link>
+        <a href="#top">Back to top ↑</a>
       </footer>
     </div>
   );

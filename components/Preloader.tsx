@@ -16,6 +16,11 @@ export default function Preloader({ name }: { name: string }) {
       setState('gone');
       return;
     }
+    window.__preloading = true;
+    const done = () => {
+      window.__preloading = false;
+      window.dispatchEvent(new Event('preloader:done'));
+    };
     const start = performance.now();
     const total = 1100;
     let raf = 0;
@@ -25,7 +30,8 @@ export default function Preloader({ name }: { name: string }) {
       if (p < 1) raf = requestAnimationFrame(tick);
       else {
         setState('out');
-        setTimeout(() => setState('gone'), 700);
+        setTimeout(done, 250);
+        setTimeout(() => setState('gone'), 800);
       }
     };
     raf = requestAnimationFrame(tick);

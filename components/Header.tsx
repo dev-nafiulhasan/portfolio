@@ -12,11 +12,11 @@ export default function Header({ settings, count }: { settings: Settings; count:
         <Link href="/#work">
           Work <sup>{count}</sup>
         </Link>
-        <Link href="/#reviews">Reviews</Link>
+        <Link href="/#skills">Skills</Link>
         <Link href="/#about">About</Link>
         <Link href="/#services">Services</Link>
       </nav>
-      <Link href="/#contact" className="pill pill--ghost nav__cta">
+      <Link href="/#contact" className="pill pill--ghost nav__cta" data-magnetic>
         Get in touch
       </Link>
     </header>

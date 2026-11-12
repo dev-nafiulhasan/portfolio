@@ -19,6 +19,7 @@ export type Project = {
 export type Review = { id: string; quote: string; author: string; company: string };
 export type Fact = { label: string; value: string };
 export type Point = { title: string; text: string };
+export type Skill = { name: string; note: string };
 export type Service = { name: string; line: string; price: string; duration: string };
 
 export type Settings = {
@@ -26,6 +27,7 @@ export type Settings = {
   lastName: string;
   role: string;
   note: string;
+  status: string;
   accent: string;
   email: string;
   location: string;
@@ -40,6 +42,8 @@ export type Settings = {
 export type SiteContent = {
   settings: Settings;
   projects: Project[];
+  skillsIntro: string;
+  skills: Skill[];
   reviewsIntro: string;
   reviews: Review[];
   about: { body: string; portrait: string; facts: Fact[] };

@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getContent } from '@/lib/store';
 import Header from '@/components/Header';
-import Effects from '@/components/Effects';
+import Motion from '@/components/Motion';
+import Cursor from '@/components/Cursor';
 import Contact from '@/components/Contact';
 import { Arrow } from '@/components/Arrow';
 
@@ -40,7 +41,8 @@ export default async function WorkPage({ params }: Props) {
 
   return (
     <>
-      <Effects />
+      <Motion />
+      <Cursor />
       <div id="top" />
       <Header settings={content.settings} count={projects.length} />
       <main>
@@ -48,35 +50,37 @@ export default async function WorkPage({ params }: Props) {
           <Link href="/#work" className="text-link">
             ← All work
           </Link>
-          <h1 className="display">{p.title}</h1>
-          <p className="lede">{p.summary}</p>
-          <dl className="facts facts--dark">
+          <h1 className="display" data-split>
+            {p.title}
+          </h1>
+          <p className="lede rv">{p.summary}</p>
+          <dl className="facts rv">
             {meta.map(([k, v]) => (
               <div key={k}>
-                <dt>{k}</dt>
+                <dt className="mono">{k}</dt>
                 <dd>{v}</dd>
               </div>
             ))}
             <div>
-              <dt>Scope</dt>
+              <dt className="mono">Scope</dt>
               <dd>{p.tags.join(', ')}</dd>
             </div>
           </dl>
           {p.liveUrl && (
-            <a className="pill pill--accent" href={p.liveUrl} target="_blank" rel="noopener">
+            <a className="pill pill--accent" href={p.liveUrl} target="_blank" rel="noopener" data-magnetic>
               Visit live site <Arrow />
             </a>
           )}
         </section>
 
-        <section className="band band--paper case-body">
+        <section className="case-body">
           {p.cover && (
-            <div className="case-img rise">
+            <div className="case-img rv" data-parallax>
               <img src={p.cover} alt={`${p.title} cover`} />
             </div>
           )}
           {p.body && (
-            <div className="prose rise">
+            <div className="prose rv">
               {p.body
                 .split(/\n\s*\n/)
                 .filter(Boolean)
@@ -86,13 +90,13 @@ export default async function WorkPage({ params }: Props) {
             </div>
           )}
           {p.gallery.map((src, i) => (
-            <div className="case-img rise" key={src + i}>
+            <div className="case-img rv" key={src + i}>
               <img src={src} alt={`${p.title} screenshot ${i + 1}`} loading="lazy" />
             </div>
           ))}
           {next && next.id !== p.id && (
-            <Link href={`/work/${next.slug}`} className="next rise">
-              <span className="small">Next project</span>
+            <Link href={`/work/${next.slug}`} className="next rv" data-cursor="Next">
+              <span className="mono">Next project</span>
               <span className="display">
                 {next.title} <Arrow />
               </span>

@@ -35,6 +35,8 @@ Saved changes appear on the live site straight away. No redeploy needed.
 | Site design (colours, type, layout) | `app/globals.css` |
 | Home page sections | `app/page.tsx` |
 | Case study page | `app/work/[slug]/page.tsx` |
+| Animations (GSAP + Lenis smooth scroll) | `components/Motion.tsx` |
+| Hero dot background / custom cursor | `components/HeroCanvas.tsx`, `components/Cursor.tsx` |
 | Admin panel | `app/admin/page.tsx` |
 | Storage (Vercel Blob / local files) | `lib/store.ts` |
 | Sign-in | `lib/auth.ts` |
